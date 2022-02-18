@@ -17,7 +17,7 @@ main()
 {
   int qtd, ace;
   int8 hash, sorteado;
-  int sorteio[6], nums[MAX_NUMEROS];
+  int8 sorteio[6], nums[MAX_NUMEROS];
 
   // sorteio
   qtd = str2nums(&sorteio, SORTEADO);

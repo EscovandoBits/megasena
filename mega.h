@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
 #define int8	unsigned long long int
 
 #define MIN_NUMEROS  6
@@ -16,7 +20,7 @@ exp2n(const int8 n)
  * Retorna um hash: resultado da soma binária de cada número apostado.
  */
 int8
-hash_aposta(const int nums[], const int qtd)
+hash_aposta(const int8 nums[], const int qtd)
 {
   int i;
   int8 hash = 0;
