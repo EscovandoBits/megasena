@@ -7,9 +7,9 @@
  * Retorna o resultado do cálculo de 2^n.
  */
 int8
-exp2(const int8 n)
+exp2n(const int8 n)
 {
-  return (n > 0 ? 2 * exp2(n - 1) : 1);
+  return (n > 0 ? 2 * exp2n(n - 1) : 1);
 }
 
 /**
@@ -21,7 +21,7 @@ hash_aposta(const int nums[], const int qtd)
   int i;
   int8 hash = 0;
   for (i = 0; i < qtd; i++)
-    hash += exp2(nums[i] - 1);
+    hash += exp2n(nums[i] - 1);
   return hash;
 }
 

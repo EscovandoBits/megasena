@@ -5,9 +5,9 @@
 #define int8	unsigned long long int
 
 int8
-exp2(const int8 n)
+exp2n(const int8 n)
 {
-  return (n > 0 ? 2 * exp2(n - 1) : 1);
+  return (n > 0 ? 2 * exp2n(n - 1) : 1);
 }
 
 int main()
@@ -20,30 +20,30 @@ int main()
   printf("\nmax: %20llu (%d bytes)\n\n", ULLONG_MAX, sizeof(ULLONG_MAX));
 
   for (i = 64; i >= 55; i--) {
-    num = exp2(i);
+    num = exp2n(i);
     printf("num: %20llu = 2^%d\n", num, i);
   }
 
   // 2^60 = 1.152921505×10¹⁸
   //num = 1073741824ULL * 1073741824ULL; // 2^30 * 2^30
-  num = exp2(60);
+  num = exp2n(60);
   printf("num: %20llu = 2^60\n", num);
 
   // 2^60 + 2^59 = 1.729382257×10¹⁸
   //num = 1152921504606846976ULL + 576460752303423488ULL; // 2^60 + 2^59
-  num = exp2(60) + exp2(59);
+  num = exp2n(60) + exp2n(59);
   printf("num: %20llu = 2^60 + 2^59\n", num);
 
-  num = exp2(60) + exp2(59) + exp2(58);
+  num = exp2n(60) + exp2n(59) + exp2n(58);
   printf("num: %20llu = 2^60 + 2^59 + 2^58\n", num);
  
-  num = exp2(60) + exp2(59) + exp2(58) + exp2(57);
+  num = exp2n(60) + exp2n(59) + exp2n(58) + exp2n(57);
   printf("num: %20llu = 2^60 + 2^59 + 2^58 + 2^57\n", num);
 
-  num = exp2(60) + exp2(59) + exp2(58) + exp2(57) + exp2(56);
+  num = exp2n(60) + exp2n(59) + exp2n(58) + exp2n(57) + exp2n(56);
   printf("num: %20llu = 2^60 + 2^59 + 2^58 + 2^57 + 2^56\n", num);
 
-  num = exp2(60) + exp2(59) + exp2(58) + exp2(57) + exp2(56) + exp2(55);
+  num = exp2n(60) + exp2n(59) + exp2n(58) + exp2n(57) + exp2n(56) + exp2n(55);
   printf("num: %20llu = 2^60 + 2^59 + 2^58 + 2^57 + 2^56 + 2^55\n", num);
 
   for (j = 6; j <= 15; j++) {
@@ -56,7 +56,7 @@ int main()
         sprintf(s2, " + 2^%d", i);
         strcat(s, s2);
       }
-      num += exp2(i);
+      num += exp2n(i);
       //printf("i=%d, num=%llu, s=%s, s2=%s\n", i, num, s, s2);
     }
     printf("num: %20llu = %s\n", num, s);

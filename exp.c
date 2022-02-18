@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "mega.h"
+
 int
 myexp2(int n)
 {
@@ -13,7 +15,7 @@ main(void)
   double x, y;
 
   x = 3.0;
-  y = exp2(x);
+  y = exp2n(x);
 
   printf("2^%d = %d\n", (int) x, (int) y);
   printf("2^%d = %d\n", 8, myexp2(8));
