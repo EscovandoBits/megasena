@@ -1,3 +1,10 @@
+# Compiled sources
+*.o
+*.so
+
+# Editor backups
+*~
+
 # Prerequisites
 *.d
 
